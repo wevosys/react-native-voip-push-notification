@@ -176,14 +176,19 @@ static NSMutableDictionary<NSString *, RNVoipPushNotificationCompletion> *comple
 }
 
 // --- should be called from `AppDelegate.didReceiveIncomingPushWithPayload`
-+ (void)didReceiveIncomingPushWithPayload:(PKPushPayload *)payload forType:(NSString *)type
++ (void)didReceiveIncomingPushWithPayload:(PKPushPayload *)payload forType:(NSString *)type callkeepUuid:(NSString *)callkeepUuid
 {
 #ifdef DEBUG
     RCTLog(@"[RNVoipPushNotificationManager] didReceiveIncomingPushWithPayload payload.dictionaryPayload = %@, type = %@", payload.dictionaryPayload, type);
 #endif
 
     RNVoipPushNotificationManager *voipPushManager = [RNVoipPushNotificationManager sharedInstance];
-    [voipPushManager sendEventWithNameWrapper:RNVoipPushRemoteNotificationReceivedEvent body:payload.dictionaryPayload];
+
+    NSDictionary *body = @{
+        @"dictionaryPayload": payload.dictionaryPayload,
+        @"callkeepUuid": callkeepUuid
+    };
+    [voipPushManager sendEventWithNameWrapper:RNVoipPushRemoteNotificationReceivedEvent body:body];
 }
 
 // --- getter for completionHandlers

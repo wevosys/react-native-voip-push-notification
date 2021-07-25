@@ -19,7 +19,7 @@ typedef void (^RNVoipPushNotificationCompletion)(void);
 
 + (void)voipRegistration;
 + (void)didUpdatePushCredentials:(PKPushCredentials *)credentials forType:(NSString *)type;
-+ (void)didReceiveIncomingPushWithPayload:(PKPushPayload *)payload forType:(NSString *)type;
++ (void)didReceiveIncomingPushWithPayload:(PKPushPayload *)payload forType:(NSString *)type callkeepUuid:(NSString *)callkeepUuid;
 + (void)addCompletionHandler:(NSString *)uuid completionHandler:(RNVoipPushNotificationCompletion)completionHandler;
 + (void)removeCompletionHandler:(NSString *)uuid;
 
