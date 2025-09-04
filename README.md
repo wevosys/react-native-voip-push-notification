@@ -1,4 +1,5 @@
 # React Native VoIP Push Notification
+> Our own copy of `react-native-voip-push-notification` incase the [original](https://github.com/brekekesoftware/react-native-voip-push-notification) one goes down. Used in [wevophone](https://github.com/wevosys/wevophone).
 
 [![npm version](https://badge.fury.io/js/react-native-voip-push-notification.svg)](https://badge.fury.io/js/react-native-voip-push-notification)
 [![npm downloads](https://img.shields.io/npm/dm/react-native-voip-push-notification.svg?maxAge=2592000)](https://img.shields.io/npm/dm/react-native-voip-push-notification.svg?maxAge=2592000)
